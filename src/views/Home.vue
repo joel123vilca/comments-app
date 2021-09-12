@@ -14,12 +14,17 @@
       <div>
         <Comment :item="data" :ids="[data.id]" />
         <div v-if="data.children.length > 0" class="comment__children">
-          <Comment
-            v-for="(item, index) in data.children"
-            :key="index"
-            :item="item"
-            :ids="[data.id, item.id]"
-          />
+          <div v-for="(item, index) in data.children" :key="index">
+            <Comment :item="item" :ids="[data.id, item.id]" />
+            <div v-if="item.children.length > 0" class="comment__children">
+              <Comment
+                v-for="(info, index) in item.children"
+                :key="index"
+                :item="info"
+                :ids="[data.id, item.id, info.id]"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -76,7 +81,7 @@ export default {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   border-radius: 10px;
   .comment__children {
-    margin-left: 90px;
+    margin-left: 45px;
   }
 }
 </style>

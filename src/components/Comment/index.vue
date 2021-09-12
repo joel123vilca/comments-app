@@ -45,8 +45,9 @@
           @click="newLike(item.id)"
         />
 
-        <span>Ocultar</span>
+        <span v-if="ids.length < 3">Ocultar</span>
         <img
+          v-if="ids.length < 3"
           src="https://img.icons8.com/external-flatart-icons-outline-flatarticons/64/000000/external-back-arrow-flatart-icons-outline-flatarticons-1.png"
           class="respond"
         />

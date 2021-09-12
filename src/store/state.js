@@ -16,7 +16,18 @@ export default {
           name: "Albert Vilca",
           comment: "hijo uno",
           date: new Date(Date.now() - 86400000),
-          likes: 0
+          likes: 0,
+          children: [
+            {
+              id: 1,
+              user_id: 1,
+              avatar: "https://mundocontact.com/wp-content/uploads/2017/09/michael_sayman.png",
+              name: "Andre K",
+              comment: "another comment",
+              likes: 0,
+              date: new Date(Date.now() - 86400000)
+            }
+          ]
         }
       ]
     },

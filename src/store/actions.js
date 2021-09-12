@@ -17,7 +17,7 @@ export default {
   },
   DELETE_COMMENT({ state, commit }, payload) {
     let data = state.comments;
-    let comments = [];
+    let comments = data;
     if (payload.ids.length === 1) {
       comments = data.filter(item => item.id !== payload.ids[0]);
     }
@@ -31,11 +31,24 @@ export default {
         return item;
       });
     }
+    if (payload.ids.length === 3) {
+      for (let i = 0; i < comments.length; i++) {
+        if (comments[i].id == payload.ids[0]) {
+          let items = comments[i].children;
+          for (let j = 0; j < items.length; j++) {
+            if (items[j].id == payload.ids[1]) {
+              let list = items[j].children;
+              items[j].children = list.filter(item => item.id !== payload.ids[2]);
+            }
+          }
+        }
+      }
+    }
     commit("SET_COMMENTS", { comments });
   },
   EDIT_COMMENT({ state, commit }, payload) {
     let data = state.comments;
-    let comments = [];
+    let comments = data;
     if (payload.ids.length === 1) {
       comments = data.map(item => {
         if (item.id == payload.ids[0]) {
@@ -59,12 +72,29 @@ export default {
         return item;
       });
     }
+    if (payload.ids.length === 3) {
+      for (let i = 0; i < comments.length; i++) {
+        if (comments[i].id == payload.ids[0]) {
+          let items = comments[i].children;
+          for (let j = 0; j < items.length; j++) {
+            if (items[j].id == payload.ids[1]) {
+              let list = items[j].children;
+              for (let k = 0; k < list.length; k++) {
+                if (list[k].id == payload.ids[2]) {
+                  list[k].comment = payload.comment;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
 
     commit("SET_COMMENTS", { comments });
   },
   SAVE_LIKE({ state, commit }, payload) {
     let data = state.comments;
-    let comments = [];
+    let comments = data;
     if (payload.ids.length === 1) {
       comments = data.map((item, i) => {
         if (item.id == payload.ids[0]) {
@@ -87,6 +117,23 @@ export default {
         }
         return item;
       });
+    }
+    if (payload.ids.length === 3) {
+      for (let i = 0; i < comments.length; i++) {
+        if (comments[i].id == payload.ids[0]) {
+          let items = comments[i].children;
+          for (let j = 0; j < items.length; j++) {
+            if (items[j].id == payload.ids[1]) {
+              let list = items[j].children;
+              for (let k = 0; k < list.length; k++) {
+                if (list[k].id == payload.ids[2]) {
+                  list[k].likes = list[k].likes + 1;
+                }
+              }
+            }
+          }
+        }
+      }
     }
     commit("SET_COMMENTS", { comments });
   },
