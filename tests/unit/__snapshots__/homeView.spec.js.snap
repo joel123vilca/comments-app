@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`comment view renders the component 1`] = `
+<div class="new__comment">
+  <div class="title">
+    <h4>Tu comentario</h4>
+  </div> <input type="text">
+  <div class="actions"><button class="cancel">Cancelar</button> <button class="save">Guardar</button></div>
+</div>
+`;

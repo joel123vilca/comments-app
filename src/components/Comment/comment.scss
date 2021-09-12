@@ -1,0 +1,82 @@
+.comment__detail {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  .comment__avatar {
+    width: 130px;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    img {
+      width: 70px;
+      height: 70px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+  .comment__content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    .comment__header {
+      height: 30px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+      .comment__title {
+        h4 {
+          margin: 0px;
+          color: #ff5733;
+        }
+      }
+      .comment__actions {
+        padding-right: 10px;
+        img {
+          cursor: pointer;
+          padding-right: 10px;
+        }
+      }
+    }
+    .comment__text {
+      input {
+        width: 60%;
+        height: 25px;
+        border-radius: 5px;
+      }
+      .save {
+        margin-left: 5px;
+        background: #ff5733;
+        border: 1px solid #ff5733;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      .cancel {
+        margin-left: 5px;
+        background: #152b72;
+        border: 1px solid #152b72;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+    }
+    .comment__reactions {
+      display: flex;
+      width: 100%;
+      .like {
+        width: 20px;
+        cursor: pointer;
+      }
+      .respond {
+        width: 20px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+      span {
+        padding-left: 10px;
+        font-size: 15px;
+        cursor: pointer;
+      }
+    }
+  }
+}

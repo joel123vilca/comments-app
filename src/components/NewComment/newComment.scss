@@ -1,0 +1,44 @@
+.new__comment {
+  margin-top: 10px;
+  width: 100%;
+  background: white;
+  -webkit-box-shadow: 0 8px 6px -6px rgba(99, 99, 99, 0.2);
+  -moz-box-shadow: 8px 8px 6px -6px rgba(99, 99, 99, 0.2);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 10px;
+  .title {
+    display: flex;
+    margin-left: 20px;
+  }
+  input {
+    width: 400px;
+    height: 40px;
+    display: flex;
+    margin-left: 20px;
+  }
+  .actions {
+    display: flex;
+    margin: 10px;
+    padding-bottom: 20px;
+    .cancel {
+      width: 100px;
+      height: 30px;
+      color: white;
+      background: #152b72;
+      border: 1px solid #152b72;
+      border-radius: 10px;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+    .save {
+      width: 100px;
+      height: 30px;
+      color: white;
+      background: #ff5733;
+      border: 1px solid #ff5733;
+      border-radius: 10px;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+  }
+}
